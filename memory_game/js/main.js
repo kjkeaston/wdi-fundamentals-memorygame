@@ -43,25 +43,52 @@ var checkForMatch = function () {
 		};
 	};
 
-var flipCard = function (cardId) {
+var flipCard = function () {
+	var cardId = this.getAttribute('data-id');
 	cardsInPlay.push(cards[cardId].rank);
 	console.log("User flipped " + cards[cardId].rank);
 	console.log(cards[cardId].cardImage);
 	console.log(cards[cardId].suit);
 
-
+	this.setAttribute('src', cards[cardId].cardImage);
 	if (cardsInPlay.length === 2) {
 		checkForMatch();
 	};
 };
 
-flipCard(0);
-flipCard(2);
+var createBoard = function () {
+	for (var i = 0; i < cards.length; i++) {
+		var cardElement = document.createElement('img');
+		cardElement.setAttribute('src', 'images/back.png');
+		cardElement.setAttribute('data-id', i);
+		cardElement.className = 'card';
+		cardElement.addEventListener('click', flipCard);
+		document.getElementById('game-board').appendChild(cardElement);
+	};
+};
+
+createBoard();
+
+function myFunction() {
+    document.getElementById("myForm").reset();
+}
 
 
 
+
+
+//coded edited in Unit 11.
+/*var flipCard = function (cardId) {
+	cardsInPlay.push(cards[cardId].rank);
+	console.log("User flipped " + cards[cardId].rank);
+	console.log(cards[cardId].cardImage);
+	console.log(cards[cardId].suit);*/
+
+//flipCard(0);
+//flipCard(2);
 //
 //
+
 //the following code is from Unit 8. Removed in Unit 9 Assignment 30%
 	/*
 	var cardOne = cards[0];
