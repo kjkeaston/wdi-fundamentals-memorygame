@@ -10,6 +10,7 @@ console.log("User flipped " + cardThree);*/
 
 
 //var cards = ["queen", "queen", "king", "king"]; => this array replaced with the following array in Unit 10 
+
 var cards = [
 {
 	rank: "queen",
@@ -67,12 +68,36 @@ var createBoard = function () {
 	};
 };
 
+
 createBoard();
 
-function myFunction() {
-    document.getElementById("myForm").reset();
-}
 
+/*var resetFlipCard = function () {
+	var cardsInPlay = [];
+
+var flipCard = function () {
+	var cardId = this.getAttribute('data-id');
+	cardsInPlay.push(cards[cardId].rank);
+
+	this.setAttribute('src', cards[cardId].cardImage);
+	if (cardsInPlay.length === 2) {
+		checkForMatch();
+	};
+};
+
+var createBoard = function () {
+	for (var i = 0; i < cards.length; i++) {
+		var cardElement = document.createElement('img');
+		cardElement.setAttribute('src', 'images/back.png');
+		cardElement.setAttribute('data-id', i);
+		cardElement.className = 'card';
+		cardElement.addEventListener('click', flipCard);
+		document.getElementById('game-board').appendChild(cardElement);
+	};
+};
+createBoard();
+
+};*/
 
 
 
